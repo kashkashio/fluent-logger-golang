@@ -189,7 +189,7 @@ func (f *Fluent) PostWithTime(tag string, tm time.Time, message interface{}) err
 		for i := 0; i < fields; i++ {
 			field := msgtype.Field(i)
 			name := field.Name
-			if n1 := field.Tag.Get("msg"); n1 != "" {
+			if n1 := field.Tag.Get("json"); n1 != "" {
 				name = n1
 			} else if n2 := field.Tag.Get("codec"); n2 != "" {
 				name = n2
